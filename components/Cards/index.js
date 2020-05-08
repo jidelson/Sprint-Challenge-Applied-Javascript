@@ -19,12 +19,12 @@
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
 function myCards(data){
-    let card = document.createElement('div');
-    let cardHeadline = document.createElement('div');
-    let author = document.createElement('div');
-    let img = document.createElement('div');
-    let authorImg = document.createElement('img');
-    let authorName = document.createElement('span');
+    const card = document.createElement('div');
+    const cardHeadline = document.createElement('div');
+    const author = document.createElement('div');
+    const img = document.createElement('div');
+    const authorImg = document.createElement('img');
+    const authorName = document.createElement('span');
 
     card.classList.add('card');
     cardHeadline.classList.add('headline');
@@ -43,40 +43,40 @@ function myCards(data){
     author.appendChild(authorName);
     
     return card;
-};
+};  
 
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then(response => {
     
-let javascript = response.data.articles.javascript;
+    const javascript = response.data.articles.javascript;
 javascript.forEach(moreData => {
-    let newCard = myCards(moreData);
-    let cardContainer = document.querySelector('.cards-container');
+    const newCard = myCards(moreData);
+    const cardContainer = document.querySelector('.cards-container');
     cardContainer.appendChild(newCard);
 });
-let bootstrap = response.data.articles.bootstrap;
+const bootstrap = response.data.articles.bootstrap;
 bootstrap.forEach(moreData => {
-    let newCard = myCards(moreData);
-    let cardContainer = document.querySelector('.cards-container');
+    const newCard = myCards(moreData);
+    const cardContainer = document.querySelector('.cards-container');
     cardContainer.appendChild(newCard);
 })
-let technology = response.data.articles.technology;
+const technology = response.data.articles.technology;
 technology.forEach(moreData => {
-    let newCard = myCards(moreData);
-    let cardContainer = document.querySelector('.cards-container');
+    const newCard = myCards(moreData);
+    const cardContainer = document.querySelector('.cards-container');
     cardContainer.appendChild(newCard);
 })
-let jquery = response.data.articles.jquery;
+const jquery = response.data.articles.jquery;
 jquery.forEach(moreData => {
-    let newCard = myCards(moreData);
-    let cardContainer = document.querySelector('.cards-container');
+    const newCard = myCards(moreData);
+    const cardContainer = document.querySelector('.cards-container');
     cardContainer.appendChild(newCard);
 })
-let nodeJs = response.data.articles.nodeJs;
+const nodeJs = response.data.articles.nodeJs;
 nodeJs.forEach(moreData => {
-let newCard = myCards(moreData);
-let cardContainer = document.querySelector('.cards-container');
+    const newCard = myCards(moreData);
+const cardContainer = document.querySelector('.cards-container');
 cardContainer.appendChild(newCard);
 })
 } )
